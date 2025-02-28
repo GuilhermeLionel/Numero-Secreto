@@ -4,7 +4,7 @@ let numeroSecreto,
     chute = 0,
     plural = 0,
     jaPassou = [],
-    dificuldadeJogo = 10;
+    dificuldadeJogo = 100;
 
 //função escreve na tela
 function escreverTela(tag, texto) {
@@ -19,14 +19,12 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
 
     if (isNaN(chute) || chute < 1 || chute > dificuldadeJogo) {
-        escreverTela('h1', `Digite um número entre 1 e ${dificuldadeJogo}.`);
-        escreverTela('p', '')
+        alert(`Digite um número entre 1 e ${dificuldadeJogo}`)
         return;
     }
 
     if (jaPassou.includes(chute)) {
-        escreverTela('h1', 'Você já tentou esse número. Tente outro.');
-        escreverTela('p', '')
+        alert('Você já tentou esse número.')
         return;
     }
 
