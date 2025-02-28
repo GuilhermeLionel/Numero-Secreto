@@ -4,7 +4,7 @@ let numeroSecreto,
     chute = 0,
     plural = 0,
     jaPassou = [],
-    dificuldadeJogo = 1000;
+    dificuldadeJogo = 100;
 
 //função escreve na tela
 function escreverTela(tag, texto) {
