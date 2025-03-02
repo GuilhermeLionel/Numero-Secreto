@@ -35,7 +35,8 @@ function verificarChute() {
         plural = tentativas !== 1 ? 'tentativas' : 'tentativa';
         escreverTela('h1', `PARABÉNS, Você acertou com ${tentativas} ${plural}.`);
         escreverTela('p', 'Clique em "Novo Jogo" para jogar novamente.');
-        document.getElementById("reiniciar").removeAttribute('disabled');
+        botaoChutar('button', true)
+        botaoID("reiniciar", 'ativar')
     } else {
         escreverTela('h1', 'ERROU...');
         if (chute > numeroSecreto) {
@@ -63,5 +64,19 @@ function novoJogo() {
     jaPassou = [];
     document.querySelector('input').value = '';
     mensagemInicial();
-    document.getElementById('reiniciar').setAttribute('disabled', true);
+    botaoID("reiniciar", 'desativar')
+    botaoChutar('button', false)
+}
+
+function botaoChutar(tag, estado){
+    const chutarBotao = document.querySelector(tag)
+    chutarBotao.disabled = estado
+}
+
+function botaoID(id, modoBotao){
+    if (modoBotao == 'ativar'){
+        const IDBotao = document.getElementById(id).removeAttribute('disabled')
+    }else if (modoBotao == 'desativar'){
+        const IDBotao = document.getElementById(id).setAttribute('disabled', true)
+    }
 }
