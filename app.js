@@ -10,6 +10,7 @@ let numeroSecreto,
 function escreverTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Male', {rate:1.2});
 }
 
 mensagemInicial();
@@ -54,7 +55,7 @@ function gerarNumero() {
 
 function mensagemInicial() {
     numeroSecreto = gerarNumero();
-    escreverTela('h1', 'Jogo do Secreto.');
+    escreverTela('h1', 'Jogo do Número Secreto.');
     escreverTela('p', `Digite um número entre 1 e ${dificuldadeJogo}.`);
 }
 
