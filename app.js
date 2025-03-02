@@ -10,7 +10,11 @@ let numeroSecreto,
 function escreverTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Male', {rate:1.2});
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Male', {rate:1.5});
+}
+
+function limparCampo(){
+    const campoLimpo = document.querySelector('input').value = '';
 }
 
 mensagemInicial();
@@ -45,7 +49,7 @@ function verificarChute() {
         } else {
             escreverTela('p', 'O número secreto é maior.');
         }
-        document.querySelector('input').value = '';
+        limparCampo()
     }
 }
 
